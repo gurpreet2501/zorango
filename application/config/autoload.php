@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 | 
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('database','tank_auth','crud_helper');
+$autoload['libraries'] = array('database','crud_helper');
 
 /*
 | -------------------------------------------------------------------

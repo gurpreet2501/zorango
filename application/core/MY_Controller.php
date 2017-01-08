@@ -9,9 +9,9 @@ class MY_Controller extends CI_Controller
         $this->load->library('grocery_CRUD');
 
         // if not logged in redirect to login page
-        if (!$this->tank_auth->is_logged_in()){
-            redirect('/auth/login/');
-        }
+        // if (!$this->tank_auth->is_logged_in()){
+        //     redirect('/auth/login/');
+        // }
     }
 
     public function crud_init($table, $col = Null)
