@@ -21,13 +21,13 @@ function crud_image_path_fix($upload_path, $image_name){
 }
 
 
-function starts_with($haystack, $needle){
-    return strpos($haystack, $needle) === 0;
-}
+// function starts_with($haystack, $needle){
+//     return strpos($haystack, $needle) === 0;
+// }
 
-function ends_with($haystack, $needle){
-    return substr_compare($haystack, $needle, -strlen($needle)) === 0;
-}
+// function ends_with($haystack, $needle){
+//     return substr_compare($haystack, $needle, -strlen($needle)) === 0;
+// }
 
 function menu_active($class)
 {
