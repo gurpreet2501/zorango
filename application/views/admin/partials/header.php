@@ -1,7 +1,8 @@
 <header id="header">
 	<h1 id="site-logo">
 		<a href="<?= site_url(); ?>">
-			<img src="<?= site_url('/assets/images/logo-white.png') ?>" alt="Site Logo" class="text-center" style="width: 85px;"/>
+			<!-- <img src="<?= site_url('/assets/images/logo-white.png') ?>" alt="Site Logo" class="text-center" style="width: 85px;"/> -->
+			<h1>Zorango</h1>
 		</a>
 	</h1>	
 

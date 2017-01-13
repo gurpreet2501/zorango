@@ -34,8 +34,10 @@ $captcha = array(
 <div id="login-container">
 <br/>
 	<div id="logo" class="text-center">
-			<img src="<?= site_url('assets/images/logo-white.png') ?>" width="150px" alt="Logo" 
-			/>
+			<!-- <img src="<?= site_url('assets/images/logo-white.png') ?>" width="150px" alt="Logo"  -->
+			<!-- /> -->
+			<h1>Zorango</h1>
+
 	</div>
 <br/>
 	<div id="login">
