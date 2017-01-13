@@ -7,15 +7,14 @@ use Illuminate\Events\Dispatcher;
 use Illuminate\Container\Container;
 
 $app = require __DIR__ . '/vendor/robmorgan/phinx/app/phinx.php';
-require_once __DIR__.'/boot-extra.php';
 
 $capsule = new Capsule;
 
 $capsule->addConnection(array(
         'host'      => 'localhost',
-        'database'  => 'nagra',
-        'username'  => 'root',
-        'password'  => '',
+        'username' => env('username','root'),
+        'password' => env('password',''),
+        'database' => env('database','barendo_zorango'),
         'driver'  => 'mysql',
         'charset'   => 'utf8',
         'collation' => 'utf8_general_ci',
