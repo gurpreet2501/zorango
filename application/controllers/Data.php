@@ -1,12 +1,25 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed');
 use App\Models;
 class Data extends MY_Controller
-{
+{		
+
+		 public function __construct()
+    {
+      parent::__construct();
+   	   $this->load->helper('form');
+			$this->load->library('form_validation');
+			$this->lang->load('tank_auth');
+      if(!$this->tank_auth->is_logged_in()){
+      		redirect('auth/logout');
+      }
+    }
+	
+
     public function index(){
       $this->view('Dashboard');
     }
 
-    public function products()
+    public function wedding_products()
     {
         $crud = $this->crud_init('products', ['name', 'price','stock']);
         $crud->field_type('created_at','hidden',date('Y-m-d H:i:s'));
@@ -18,14 +31,7 @@ class Data extends MY_Controller
         $this->view_crud($crud->render(), 'Add Potato Types');
     }
 
-    public function records()
-    {
-        $crud = $this->crud_init('records', ['invoice_no', 'owner_name','stacker','supervisor']);
-        $crud->field_type('created_at','hidden',date('Y-m-d H:i:s'));
-        $crud->field_type('updated_at','hidden');
-        $this->view_crud($crud->render(), 'Add Record');
-    }
-
+    
     public function storage()
     {
         $crud = $this->crud_init('storage', ['potato_type', 'bags','chamber','level','date']);
@@ -35,75 +41,6 @@ class Data extends MY_Controller
         $crud->field_type('updated_at','hidden');
         $this->view_crud($crud->render(), 'Add Storage Details');
     }
-
-    public function countries()
-    {
-        $crud = $this->crud_init('countries', ['name']);
-        $crud->unique_fields(array('name'));
-        $crud->required_fields('name');
-        $crud->field_type('created_at','hidden',date('Y-m-d H:i:s'));
-        $crud->field_type('updated_at','hidden');
-        $this->view_crud($crud->render(), 'Add Countries');
-    }
-
-    public function states()
-    {
-        $crud = $this->crud_init('states', ['name']);
-        $crud->unique_fields(array('name'));
-        $crud->required_fields('name');
-        $crud->field_type('created_at','hidden',date('Y-m-d H:i:s'));
-        $crud->field_type('updated_at','hidden');
-        $this->view_crud($crud->render(), 'Add States');
-    }
-
-    public function cities()
-    {
-        $crud = $this->crud_init('cities', ['name']);
-        $crud->unique_fields(array('name'));
-        $crud->required_fields('name');
-        $crud->field_type('created_at','hidden',date('Y-m-d H:i:s'));
-        $crud->field_type('updated_at','hidden');
-        $this->view_crud($crud->render(), 'Add Cities');
-    }
-
-    public function dispatch_items()
-    {
-        $crud = $this->crud_init('dispatch', []);
-        $crud->required_fields('stock','customer_id','product_id','tax','dispatched_on','driver_name','contact');
-        $crud->display_as('customer_id','Select Customer');
-        $crud->display_as('product_id','Select Product');
-        $crud->set_relation('customer_id','customers','name');
-        $crud->set_relation('product_id','products','name');
-        $crud->field_type('created_at','hidden',date('Y-m-d H:i:s'));
-        $crud->field_type('updated_at','hidden');
-        $this->view_crud($crud->render(), 'Create New Dispatch');
-    }
-
-    public function customers()
-    {
-        $crud = $this->crud_init('customers', ['name', 'address','phone']);
-        $crud->field_type('created_at','hidden',date('Y-m-d H:i:s'));
-        $crud->field_type('updated_at','hidden');
-        $crud->set_relation('city','cities','name');
-        $crud->set_relation('state','states','name');
-        $crud->set_relation('country','countries','name');
-        $crud->required_fields('name','phone','address','city','state','country');
-        $crud->set_field_upload('logo','assets/uploads/files');
-        $this->view_crud($crud->render(), 'Add Potato Types');
-    }
-
-  public function brands()
-    {
-        $crud = $this->crud_init('brands', ['brand_name']);
-        $crud->unset_delete();
-        $crud->field_type('created_at','hidden');
-        $crud->field_type('updated_at','hidden');
-        $crud->unique_fields('brand_name');
-        // $crud->unset_add();
-        $crud->unset_edit();
-        $this->view_crud($crud->render(), 'Brands');
-    }
-
 
     /**
      * @users Method
