@@ -2,7 +2,7 @@
 
 use Phinx\Migration\AbstractMigration;
 
-class ProductsTable extends AbstractMigration
+class WeddingProductsTable extends AbstractMigration
 {
     /**
      * Change Method.
@@ -27,13 +27,15 @@ class ProductsTable extends AbstractMigration
      */
     public function change()
     {
-         $dispatch = $this->table('products', ['id' => true]);
-        $dispatch->addColumn('potato_type','integer')
-         ->addColumn('bags','integer')
-         ->addColumn('chamber','string')
-         ->addColumn('level','integer')
-         ->addColumn('date','datetime')
+         $dispatch = $this->table('wedding_products', ['id' => true]);
+         $dispatch->addColumn('name','integer')
+         ->addColumn('price','integer')
+         ->addColumn('description','string')
+         ->addColumn('weight_unit','string')
+         ->addColumn('weight','string')
          ->addColumn('brand','string')
+         ->addColumn('stock','integer')
+         ->addColumn('items_per_carton','integer')
          ->addColumn('created_at','datetime')
          ->addColumn('updated_at','datetime')
          ->save();
