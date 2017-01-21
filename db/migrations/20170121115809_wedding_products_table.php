@@ -36,6 +36,11 @@ class WeddingProductsTable extends AbstractMigration
          ->addColumn('brand','string')
          ->addColumn('stock','integer')
          ->addColumn('items_per_carton','integer')
+         ->addColumn('image_1','string')
+         ->addColumn('image_2','string')
+         ->addColumn('image_3','string')
+         ->addColumn('image_4','string')
+         ->addColumn('image_5','string')
          ->addColumn('created_at','datetime')
          ->addColumn('updated_at','datetime')
          ->save();

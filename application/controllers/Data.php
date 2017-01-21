@@ -21,7 +21,15 @@ class Data extends MY_Controller
 
     public function wedding_products()
     {
-        $crud = $this->crud_init('wedding_products', ['name', 'price','stock']);
+        $crud = $this->crud_init('wedding_products', ['name', 'price','stock','image_1']);
+        $crud->display_as('image_1', 'Default Image');
+        $crud->set_field_upload('image_1','assets/uploads/files');
+        $crud->set_field_upload('image_2','assets/uploads/files');
+        $crud->set_field_upload('image_3','assets/uploads/files');
+        $crud->set_field_upload('image_4','assets/uploads/files');
+        $crud->set_field_upload('image_5','assets/uploads/files');
+        $crud->field_type('created_at','hidden',date('Y-m-d H:i:s'));
+        $crud->field_type('updated_at','hidden',date('Y-m-d H:i:s'));
         $this->view_crud($crud->render(), 'Add Items');
     }
 
