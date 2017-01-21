@@ -28,8 +28,8 @@ class WeddingProductsTable extends AbstractMigration
     public function change()
     {
          $dispatch = $this->table('wedding_products', ['id' => true]);
-         $dispatch->addColumn('name','integer')
-         ->addColumn('price','integer')
+         $dispatch->addColumn('name','string')
+         ->addColumn('price','float')
          ->addColumn('description','string')
          ->addColumn('weight_unit','string')
          ->addColumn('weight','string')

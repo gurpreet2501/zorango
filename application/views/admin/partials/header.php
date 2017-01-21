@@ -1,6 +1,6 @@
 <header id="header">
 	<h1 id="site-logo">
-		<a href="<?= site_url(); ?>">
+		<a href="<?= site_url('data/index')?>">
 			<!-- <img src="<?= site_url('/assets/images/logo-white.png') ?>" alt="Site Logo" class="text-center" style="width: 85px;"/> -->
 			<h1>Zorango</h1>
 		</a>

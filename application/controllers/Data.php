@@ -21,14 +21,8 @@ class Data extends MY_Controller
 
     public function wedding_products()
     {
-        $crud = $this->crud_init('products', ['name', 'price','stock']);
-        $crud->field_type('created_at','hidden',date('Y-m-d H:i:s'));
-        $crud->field_type('updated_at','hidden');
-        $crud->display_as('price','Price (in Kg)(in Rs)');
-        $crud->display_as('stock','Stock (in Kg)');
-        $crud->required_fields('name','price','stock','active');
-        $crud->set_field_upload('logo','assets/uploads/files');
-        $this->view_crud($crud->render(), 'Add Potato Types');
+        $crud = $this->crud_init('wedding_products', ['name', 'price','stock']);
+        $this->view_crud($crud->render(), 'Add Items');
     }
 
     

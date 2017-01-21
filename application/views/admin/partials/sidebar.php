@@ -13,7 +13,7 @@
 			
             <?php 
 
-                build_menu([['Dashboard', '']]);
+                build_menu([['Dashboard', 'data/index']]);
 
                 // build_dropdown_menu('Users', 'fa fa-table', [
                 //     ['Internal Admins', 'data/users/admin'],
@@ -21,11 +21,11 @@
                 //     // ['Customers', 'users/customer']
                 // ]);
 
-                 build_dropdown_menu('Manage Location', 'fa fa-table', [
-                    ['Add Cities', 'data/cities'],
-                    ['Add States', 'data/states'],
-                    ['Add Countries', 'data/countries'],
-                 ]);
+                 // build_dropdown_menu('Manage Location', 'fa fa-table', [
+                 //    ['Add Cities', 'data/cities'],
+                 //    ['Add States', 'data/states'],
+                 //    ['Add Countries', 'data/countries'],
+                 // ]);
 
                 // build_dropdown_menu('Warranty Plans', 'fa fa-table', [
                 //     ['Combined Plans', 'data/combined_plans'],
@@ -33,11 +33,7 @@
                 // ]);
 
                 build_menu([
-                    ['Storage', 'data/storage'],
-                    ['Records', 'data/records'],
-                    ['Add Potatoes', 'data/products'],
-                    // ['Add Customers', 'data/customers'],
-                    // ['Dispatch Items', 'data/dispatch_items'],
+                    ['Wedding Items', 'data/wedding_products'],
                 ]);
             ?>
 		</ul>
